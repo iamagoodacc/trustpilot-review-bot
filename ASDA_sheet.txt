@@ -1,0 +1,31 @@
+Aim of the Program:
+To read online reviews and remarks about ASDA and its services and provide useful product improvement suggestions based off that.
+
+Inferences by the program:
+
+"Content of Review"
+Services mentioned: In-Person Shopping, Delivery, Customer Service
+Aspect of review: Price (Too High/Good Price), Faults, Quality (Good/Mediocre/Poor)
+Overall Satisfaction: Stars if provided, Make Stars if not provided.
+
+"Mentions"
+Locations Mentioned
+Employee Names Mentioned
+Competitors Mentioned
+
+"Reviewer Data"
+Date of Reviews
+Age of reviewers (18-35)(35-60)(60+)
+Reviewer Credibility (Verified or not?)
+
+Sources of Reviews:
+
+User Based:
+Trustpilot
+Yelp
+Google Reviews
+
+"Professional" Based: (Ignore "Reviewer Data")
+
+Facebook and Twitter Mentions
+Transcripts of Video Reviews (Youtube, TikTok, Instagram)
