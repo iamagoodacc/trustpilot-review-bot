@@ -1,0 +1,402 @@
+{
+    "props": {
+        "pageProps": {
+            "_sentryTraceData": "be11a4d8c5a4421a9697b2aaa2c5b193-82d1a49f24446e34-0",
+            "_sentryBaggage": "sentry-environment=Production,sentry-release=businessunitprofile-consumersite%402.1077.0,sentry-public_key=7ac98d0742b24421b3d38448c4bf1184,sentry-trace_id=be11a4d8c5a4421a9697b2aaa2c5b193,sentry-transaction=%2Freview%2F%5BbusinessUnit%5D,sentry-sampled=false",
+            "pageUrl": "https://uk.trustpilot.com/review/www.asda.com?page=100",
+            "businessUnit": {
+                "id": "483f1dfc0000640005029860",
+                "displayName": "Asda",
+                "identifyingName": "www.asda.com",
+                "numberOfReviews": 16386,
+                "trustScore": 1.4,
+                "websiteUrl": "http://www.asda.com",
+                "websiteTitle": "www.asda.com",
+                "profileImageUrl": "//s3-eu-west-1.amazonaws.com/tpd/screenshots/483f1dfc0000640005029860/198x149.png",
+                "customHeaderUrl": "",
+                "promotion": null,
+                "hideCompetitorModule": false,
+                "stars": 1.5,
+                "categories": [
+                    {
+                        "id": "cell_phone_store",
+                        "name": "Mobile Phone Shop",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    },
+                    {
+                        "id": "childrens_clothing_store",
+                        "name": "Children's clothes shop",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": true
+                    },
+                    {
+                        "id": "shoe_store",
+                        "name": "Shoe shop",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    },
+                    {
+                        "id": "insurance_agency",
+                        "name": "Insurance agency",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    },
+                    {
+                        "id": "photo_shop",
+                        "name": "Photography shop",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    },
+                    {
+                        "id": "supermarket",
+                        "name": "Supermarket",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    },
+                    {
+                        "id": "gaming_service_provider",
+                        "name": "Gaming services",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    },
+                    {
+                        "id": "bags_and_luggage_store",
+                        "name": "Bags and luggage shop",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    },
+                    {
+                        "id": "music_store",
+                        "name": "Music shop",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    },
+                    {
+                        "id": "baby_store",
+                        "name": "Baby shop",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    },
+                    {
+                        "id": "electronic_spare_parts_and_component_store",
+                        "name": "Electronic spare parts",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    },
+                    {
+                        "id": "wellness_center",
+                        "name": "Wellness centre",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    },
+                    {
+                        "id": "gift_shop",
+                        "name": "Gift shop",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    },
+                    {
+                        "id": "book_store",
+                        "name": "Book shop",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    },
+                    {
+                        "id": "car_accessories_store",
+                        "name": "Car accessories shop",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    },
+                    {
+                        "id": "movie_rental_store",
+                        "name": "Film rental store",
+                        "rank": "undefined",
+                        "cardinality": "undefined",
+                        "isPrimary": false
+                    }
+                ],
+                "breadcrumb": {
+                    "topLevelId": "shopping_fashion",
+                    "topLevelDisplayName": "Shopping \u0026 Fashion",
+                    "midLevelId": "clothing_underwear",
+                    "midLevelDisplayName": "Clothing \u0026 Underwear",
+                    "bottomLevelId": "childrens_clothing_store",
+                    "bottomLevelDisplayName": "Children's clothes shop"
+                },
+                "isClaimed": true,
+                "isClosed": false,
+                "isTemporarilyClosed": false,
+                "locationsCount": 0,
+                "isCollectingReviews": false,
+                "verification": {
+                    "verifiedByGoogle": false,
+                    "verifiedBusiness": true,
+                    "verifiedPaymentMethod": false,
+                    "verifiedUserIdentity": false
+                },
+                "hasCollectedIncentivisedReviews": false,
+                "consumerAlert": null,
+                "consumerAlerts": [],
+                "isMerged": false,
+                "contactInfo": {
+                    "email": "",
+                    "address": "",
+                    "city": "",
+                    "country": "US",
+                    "phone": "",
+                    "zipCode": ""
+                },
+                "activity": {
+                    "isUsingPaidFeatures": false,
+                    "hasSubscription": false,
+                    "isAskingForReviews": false,
+                    "claimedDate": "2021-07-26T10:11:05.000Z",
+                    "isClaimed": true,
+                    "previouslyClaimed": true,
+                    "replyBehavior": {
+                        "averageDaysToReply": 0,
+                        "lastReplyToNegativeReview": null,
+                        "negativeReviewsWithRepliesCount": 0,
+                        "replyPercentage": 0,
+                        "totalNegativeReviewsCount": 2647
+                    },
+                    "verification": {
+                        "verifiedByGoogle": false,
+                        "verifiedBusiness": true,
+                        "verifiedPaymentMethod": false,
+                        "verifiedUserIdentity": false
+                    },
+                    "hasBusinessUnitMergeHistory": false,
+                    "basiclinkRate": 0,
+                    "hideBasicLinkAlert": false,
+                    "isUsingAIResponses": false
+                },
+                "hasCustomHeaderSetting": false,
+                "hasPromotionSetting": false,
+                "hasNewTrustSignalsConsumerAlerts": true
+            },
+            "reviews": [
+                {
+                    "id": "656bb6d2f13771e19bcfa4f2",
+                    "filtered": false,
+                    "pending": false,
+                    "text": "F ing bs, got some grinch pjs put them on at home and they had a massive hole in the top, then to add onto it ordered 5 things off the website, to them only emailing me half an hour before they were delivered saying 4 things were out of stock and that I couldn’t cancel my order, so paid £5 for something that was £1 I’m fuming",
+                    "rating": 1,
+                    "labels": {
+                        "merged": null,
+                        "verification": {
+                            "isVerified": false,
+                            "createdDateTime": "2023-12-03T00:59:31.000Z",
+                            "reviewSourceName": "Organic",
+                            "verificationSource": "invitation",
+                            "verificationLevel": "not-verified",
+                            "hasDachExclusion": false
+                        }
+                    },
+                    "title": "Wrong doings after wrong doings",
+                    "likes": 0,
+                    "dates": {
+                        "experiencedDate": "2023-12-02T00:00:00.000Z",
+                        "publishedDate": "2023-12-03T00:59:31.000Z",
+                        "updatedDate": null
+                    },
+                    "report": null,
+                    "hasUnhandledReports": false,
+                    "consumer": {
+                        "id": "656bb6a8c294830012e861e1",
+                        "displayName": "Demi",
+                        "imageUrl": "",
+                        "numberOfReviews": 1,
+                        "countryCode": "GB",
+                        "hasImage": false,
+                        "isVerified": false
+                    },
+                    "reply": null,
+                    "consumersReviewCountOnSameDomain": 1,
+                    "consumersReviewCountOnSameLocation": null,
+                    "productReviews": [],
+                    "language": "en",
+                    "location": null
+                },
+                {
+                    "id": "656b998400e4995333cd3c43",
+                    "filtered": false,
+                    "pending": false,
+                    "text": "Not been to an Asda in ages preferring Aldi and Lidl, went to Asda colne this evening and was disgusted with the state of the store. Empty shelves, refrigerated stock left on trolleys outside fridges, probably only about 5 or 6 staff members seen across the whole store! prices have gone up massively and the shopping experience is atrocious",
+                    "rating": 1,
+                    "labels": {
+                        "merged": null,
+                        "verification": {
+                            "isVerified": false,
+                            "createdDateTime": "2023-12-02T22:54:28.000Z",
+                            "reviewSourceName": "Organic",
+                            "verificationSource": "invitation",
+                            "verificationLevel": "not-verified",
+                            "hasDachExclusion": false
+                        }
+                    },
+                    "title": "Pathetic excuse for a supermarket",
+                    "likes": 1,
+                    "dates": {
+                        "experiencedDate": "2023-12-02T00:00:00.000Z",
+                        "publishedDate": "2023-12-02T22:54:28.000Z",
+                        "updatedDate": null
+                    },
+                    "report": null,
+                    "hasUnhandledReports": false,
+                    "consumer": {
+                        "id": "6023dc6467997c0019b58ebb",
+                        "displayName": "customer",
+                        "imageUrl": "",
+                        "numberOfReviews": 6,
+                        "countryCode": "GB",
+                        "hasImage": false,
+                        "isVerified": false
+                    },
+                    "reply": null,
+                    "consumersReviewCountOnSameDomain": 1,
+                    "consumersReviewCountOnSameLocation": null,
+                    "productReviews": [],
+                    "language": "en",
+                    "location": null
+                },
+                {
+                    "id": "656b7f61abad132419dd7959",
+                    "filtered": false,
+                    "pending": false,
+                    "text": "I’d put 0 stars if I could placed an order for delivery wasnt here in the time frame they gave so called the store asking about it they told me the driver was at pick up point waiting to collect it then over an hour later cancel my order when I called back at that point they couldn’t give me a reason and refused to let me speak to a manager this then left me with a 17 month old with no milk for bed time and no food never shopping with them again",
+                    "rating": 1,
+                    "labels": {
+                        "merged": null,
+                        "verification": {
+                            "isVerified": false,
+                            "createdDateTime": "2023-12-02T21:02:57.000Z",
+                            "reviewSourceName": "Organic",
+                            "verificationSource": "invitation",
+                            "verificationLevel": "not-verified",
+                            "hasDachExclusion": false
+                        }
+                    },
+                    "title": "Never shopping at Asda again",
+                    "likes": 0,
+                    "dates": {
+                        "experiencedDate": "2023-12-02T00:00:00.000Z",
+                        "publishedDate": "2023-12-02T21:02:57.000Z",
+                        "updatedDate": null
+                    },
+                    "report": null,
+                    "hasUnhandledReports": false,
+                    "consumer": {
+                        "id": "656b7f49cdc57e00136a60d0",
+                        "displayName": "😡😡😡😡",
+                        "imageUrl": "",
+                        "numberOfReviews": 1,
+                        "countryCode": "GB",
+                        "hasImage": false,
+                        "isVerified": false
+                    },
+                    "reply": null,
+                    "consumersReviewCountOnSameDomain": 1,
+                    "consumersReviewCountOnSameLocation": null,
+                    "productReviews": [],
+                    "language": "en",
+                    "location": null
+                },
+                {
+                    "id": "656b7c85a332b7260cd00781",
+                    "filtered": false,
+                    "pending": false,
+                    "text": "We found an under weight product in the store. We tried to complain at the store but staff said that we must contact customer service at the HQ. We called the HQ but could not get to customer service. Their call assistant suggested writing or texting the company. We wrote to the company explaining our concern. After 3 weeks we had not even received an acknowledgment of our communication. We think that the new owners have strongly shifted away from service excellence to profit at any cost. Result loss of consumer confidence.",
+                    "rating": 2,
+                    "labels": {
+                        "merged": null,
+                        "verification": {
+                            "isVerified": false,
+                            "createdDateTime": "2023-12-02T20:50:45.000Z",
+                            "reviewSourceName": "Organic",
+                            "verificationSource": "invitation",
+                            "verificationLevel": "not-verified",
+                            "hasDachExclusion": false
+                        }
+                    },
+                    "title": "Underweight product packs.",
+                    "likes": 2,
+                    "dates": {
+                        "experiencedDate": "2023-10-14T00:00:00.000Z",
+                        "publishedDate": "2023-12-02T20:50:45.000Z",
+                        "updatedDate": null
+                    },
+                    "report": null,
+                    "hasUnhandledReports": false,
+                    "consumer": {
+                        "id": "656b7ad6a142c0001255f5f3",
+                        "displayName": "John Bendall",
+                        "imageUrl": "https://user-images.trustpilot.com/656b7ad6a142c0001255f5f3/73x73.png",
+                        "numberOfReviews": 2,
+                        "countryCode": "GB",
+                        "hasImage": true,
+                        "isVerified": false
+                    },
+                    "reply": null,
+                    "consumersReviewCountOnSameDomain": 1,
+                    "consumersReviewCountOnSameLocation": null,
+                    "productReviews": [],
+                    "language": "en",
+                    "location": null
+                },
+                {
+                    "id": "656b66583f280f3f2fb30208",
+                    "filtered": false,
+                    "pending": false,
+                    "text": "This is review about ASDA in Isle Of Dogs, London, E14. Their staff has a bad attitude and don't respect customers. Securities talking to people with raised voice and behave like they run this store.  Won't recommend to go there.",
+                    "rating": 1,
+                    "labels": {
+                        "merged": null,
+                        "verification": {
+                            "isVerified": false,
+                            "createdDateTime": "2023-12-02T19:16:08.000Z",
+                            "reviewSourceName": "Organic",
+                            "verificationSource": "invitation",
+                            "verificationLevel": "not-verified",
+                            "hasDachExclusion": false
+                        }
+                    },
+                    "title": "Stay away!",
+                    "likes": 1,
+                    "dates": {
+                        "experiencedDate": "2023-12-02T00:00:00.000Z",
+                        "publishedDate": "2023-12-02T19:16:08.000Z",
+                        "updatedDate": null
+                    },
+                    "report": null,
+                    "hasUnhandledReports": false,
+                    "consumer": {
+                        "id": "648c2fbb12814d0012c2da65",
+                        "displayName": "Igor Urdenko",
+                        "imageUrl": "https://user-images.trustpilot.com/648c2fbb12814d0012c2da65/73x73.png",
+                        "numberOfReviews": 7,
+                        "countryCode": "GB",
+                        "hasImage": true,
+                        "isVerified": false
+                    }
+                }
+            ]
+        }
+    }
+}

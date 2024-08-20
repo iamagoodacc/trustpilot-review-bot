@@ -156,47 +156,56 @@ def fetch_reviews(base_url):
         html = response.text
         soup = BeautifulSoup(html, 'html.parser')
 
-        verification_script_tag = soup.find('script', {'type': 'application/json', 'id': '__NEXT_DATA__'})
-        if not verification_script_tag:
-            print("Data could not be found, hence unable to generate reviews")
+        review_script_tag = soup.find('script', {'data-business-unit-json-ld': 'true'})
+        if not review_script_tag:
+            print("No review data found in the script tag.")
             break
 
+        verification_script_tag = soup.find('script', {'type': 'application/json', 'id': '__NEXT_DATA__'})
+        if not verification_script_tag:
+            print("Linked data could not be found, hence unable to check for verification")
+            break
+
+        review_data = json.loads(review_script_tag.string)["@graph"]
+        for review in review_data:
+            if review["@type"] == "Review":
+
+                url = review.get('@id')
+
+                if not url:
+                    generated_uuid = str(uuid.uuid4())
+                    review_id = generated_uuid
+                else:
+                    identifier = url.split('/')[-1]
+                    review_id = identifier
+
+                headline = review.get("headline", "No Title")
+                review_body = review.get("reviewBody", "No Review Body")
+                timestamp = review.get("datePublished", "2000-01-24T14:37:07.000Z")
+                rating = review['reviewRating'].get('ratingValue', 'No Rating')
+                sentiment = execute_llm(sentiment_promt(f"{headline}. {review_body}"))  
+                topic = execute_llm(topic_promt(f"{headline}. {review_body}"))
+                text_rating = execute_llm(text_rating_promt(f"{headline}. {review_body}"))
+                discrepancy = abs(float(text_rating) - float(rating))
+                verified = False
+                #dashboard_topic = execute_llm(dashboard_topic_promt(f"{headline}. {review_body}"))
+                #"dashboard_topic": dashboard_topic
+                results.append({
+                    "id": review_id,
+                    "title": anonymize_text(headline),
+                    "body": anonymize_text(review_body),
+                    "timestamp": timestamp,
+                    "rating": rating,
+                    "page": page_number,
+                    "sentiment": sentiment,
+                    "topic": topic,
+                    "verified": verified
+                })
+
+        #page -> pageProps -> reviews
         verification_review_data = json.loads(verification_script_tag.string)["props"]["pageProps"]["reviews"]
         for review in verification_review_data:
-            url = review.get('id')
-
-            if not url:
-                generated_uuid = str(uuid.uuid4())
-                review_id = generated_uuid
-            else:
-                identifier = url.split('/')[-1]
-                review_id = identifier
-
-            headline = review.get("title", "No Title")
-            review_body = review.get("text", "No Review Body")
-
-            timestamp = review["dates"].get("publishedDate", "2000-01-24T14:37:07.000Z")
-            rating = review.get('rating', 'No Rating')
-            verified = review['labels']['verification'].get('isVerified', False)
-
-            sentiment = execute_llm(sentiment_promt(f"{headline}. {review_body}"))  
-            topic = execute_llm(topic_promt(f"{headline}. {review_body}"))
-            text_rating = execute_llm(text_rating_promt(f"{headline}. {review_body}"))
-            discrepancy = abs(float(text_rating) - float(rating))
-
-            results.append({
-                "id": review_id,
-                "title": anonymize_text(headline),
-                "body": anonymize_text(review_body),
-                "timestamp": timestamp,
-                "rating": rating,
-                "text-rating": text_rating,
-                "discrepancy": discrepancy,
-                "page": page_number,
-                "sentiment": sentiment,
-                "topic": topic,
-                "verified": verified
-            })
+            pass
 
         # Uncomment the following line to slow down the requests
         # Continues fetching results empty response
