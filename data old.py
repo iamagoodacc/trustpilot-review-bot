@@ -161,11 +161,6 @@ def fetch_reviews(base_url):
             print("No review data found in the script tag.")
             break
 
-        verification_script_tag = soup.find('script', {'type': 'application/json', 'id': '__NEXT_DATA__'})
-        if not verification_script_tag:
-            print("Linked data could not be found, hence unable to check for verification")
-            break
-
         review_data = json.loads(review_script_tag.string)["@graph"]
         for review in review_data:
             if review["@type"] == "Review":
