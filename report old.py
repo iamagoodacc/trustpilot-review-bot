@@ -1,16 +1,8 @@
-# Libraries for visualisations
-from matplotlib import pyplot as plt
-import numpy as np
-import pandas as pd
-from PIL import Image
-from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
-import seaborn as sns
-# Libraries for report generation
 import json
 import os
 import time
 from dotenv import load_dotenv
-from docx import Document, Inches
+from docx import Document
 from langchain_community.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain_openai import AzureOpenAIEmbeddings, AzureChatOpenAI
@@ -88,15 +80,6 @@ def generate_responses(questions, document_search, llm_chain):
             responses[question] = "Error generating response."
     return responses
 
-# Function to take the average of inferred sentiment
-def average_rating(reviews):
-    sentiment_sum = 0
-    for review in reviews:
-        sentiment_sum = sentiment_sum + review["text_rating"]
-    
-    average_rating = sentiment_sum/len(reviews)
-    return average_rating
-
 # Function to summarize responses for each question
 def summarize_responses(responses, llm_chain):
     summarized_responses = {}
@@ -106,35 +89,15 @@ def summarize_responses(responses, llm_chain):
         summarized_responses[question] = llm_chain.run(input_documents=[doc], question=f"Summarize the key points regarding {question}.")
     return summarized_responses
 
-json_file_path = 'asda.json'
-csv_file_path = 'TrustpilotReviews.csv'
-# Function to create wordcloud 
-df = pd.read_json(json_file_path)
-df.to_csv(csv_file_path, index=False)
-
-df = pd.read_csv(csv_file_path, index_col=0)
-text = " ".join(review for review in df.body)
-stopwords = set(STOPWORDS)
-stopwords.update(["ANONYMIZED", "EMAIL", "DATE", "LOCATION", "PERSON", "Asda"])
-wordcloud = WordCloud(width=800, height=800,stopwords=stopwords, max_words=500, max_font_size=100, background_color="white").generate(text)
-plt.savefig('wordcloud.png')
-
-# Function to create bar chart
-frequency_table = df.groupby(['rating', 'topic']).size().reset_index(name='Frequency')
-sns.barplot(data=frequency_table, x="topic", y="Frequency", hue="rating")
-plt.title("Frequency of Ratings in Reviews by Topic")
-plt.xlabel("Topics")
-plt.ylabel("Frequency")
-plt.savefig('barchart.png')
 # Function to create a Word document from the responses
-def create_word_report(summarized_responses, positive_percentage, negative_percentage, overall_rating, output_path='analytical_report.docx'):
+def create_word_report(summarized_responses, positive_percentage, negative_percentage, output_path='analytical_report.docx'):
     document = Document()
     document.add_heading('Analytical Report', 0)
 
     document.add_heading('Executive Summary', level=1)
     document.add_paragraph(
-        f"This comprehensive report evaluates 1980 customer trustpilot reviews of ASDA. "
-        f"The analysis provides insights into several aspects of ASDA's services, highlighting areas of strength and opportunities for improvement."
+        f"This comprehensive report evaluates 2,420 customer reviews of Nationwide, focusing on key areas of customer experience and satisfaction. "
+        f"The analysis provides insights into several aspects of Nationwide's services, highlighting areas of strength and opportunities for improvement."
     )
     document.add_heading('Sentiment Analysis', level=2)
     document.add_paragraph(f"Positive Reviews: {positive_percentage:.2f}%")
@@ -143,34 +106,22 @@ def create_word_report(summarized_responses, positive_percentage, negative_perce
     for question, summary in summarized_responses.items():
         document.add_heading(question, level=1)
         document.add_paragraph(summary)
-
-    document.add_heading('Sentiment Analysis', level=2)
-    document.add_paragraph(f"Overall Sentiment: {overall_rating}")
-
-    document.add_heading('Visualisations', level=2)
-    document.add_paragraph("Below is a wordcloud of all the reviews:")
-    document.add_picture('wordcloud.png', width=Inches(6)) 
-    document.add_paragraph("Below is a bar chart of all the ratings separated by topic:")
-    document.add_picture('barchart.png', width=Inches(6)) 
-
+    
     document.save(output_path)
     print(f"Report saved as '{output_path}'.")
 
 if __name__ == "__main__":
     # Load reviews from the existing JSON file
-    review_text = load_text('asda.json')
+    review_text = load_text('reviews/nationwide.json') #this is their JSON file
     if review_text is None:
         exit(1)
     
     # Load reviews data
-    with open('asda.json', 'r') as file:
+    with open('reviews/nationwide.json', 'r') as file:
         reviews_data = json.load(file)
     
     # Analyze sentiment
     positive_percentage, negative_percentage = analyze_sentiment(reviews_data)
-
-    # Calculate Overall rating
-    overall_rating = average_rating(reviews_data)
     
     # Chunk the reviews text
     texts = text_splitter.split_text(review_text)
@@ -178,13 +129,13 @@ if __name__ == "__main__":
     # Batch processing to avoid rate limits
     batch_size = 100
     aggregated_responses = {question: [] for question in [
-        "Customer emotions exhibited in reviews",
-        "Specific product with most positive feedback",
-        "Specific products with most negative feedback ",
-        "Specific quality issues mentioned by reviewers",
-        "Specific price issues mentioned by reviewers",
-        "Number of mentions of Inflation or Cost of Living Crisis",
-        "Number of Mentions of Competitors"
+        "Customer satisfaction with branch staff and service quality",
+        "Customer loyalty and retention rates for branch customers",
+        "Customer feedback on the Fairer Share Payment and other member benefits",
+        "Customer engagement with branch events and charitable activities",
+        "Customer complaints and resolutions for branch-related issues",
+        "Customer preferences and expectations for branch versus digital channels",
+        "Customer awareness and perception of the mutual ownership model and its advantages"
     ]}
 
     questions = list(aggregated_responses.keys())
@@ -215,7 +166,7 @@ if __name__ == "__main__":
     summarized_responses = summarize_responses(aggregated_responses, llm_chain)
     
     # Create the Word report
-    create_word_report(summarized_responses, positive_percentage, negative_percentage, overall_rating)
+    create_word_report(summarized_responses, positive_percentage, negative_percentage)
     print("Analysis complete. Results saved to 'analytical_report.docx'.")
 
 

@@ -56,7 +56,7 @@ def anonymize_text(text):
 # Function to generate the sentiment prompt for the user and outcomes from the model
 def sentiment_promt(user_input):
     messages = [
-        {"role": "system", "content": "Classify the sentiment of the following review as positive, negative, or neutral."},
+        {"role": "system", "content": "Classify the sentiment of the following review as positive, negative, or neutral from the user input. The response must be only one of the following: 'positive', 'negative', or 'neutral'. And follow the rules - No additonal information is required. Do not add any empty space before or after the response. Do not add any punctuation marks. Do not add any specical characters. Do not add any extra words. Do not add any extra characters. Do not add any extra spaces. Do not add any extra lines. Do not add any extra paragraphs. Do not add any extra sentences. Do not add any extra symbols. Do not add any extra numbers. Do not add any extra letters. Do not add any extra digits. Do not add any extra alphabets. Do not add any extra digits"},
         {"role": "user", "content": user_input}
     ]
     return messages
@@ -64,7 +64,7 @@ def sentiment_promt(user_input):
 # Function to generate the text rating prompt
 def text_rating_promt(user_input):
     messages = [
-        {"role": "system", "content": "Based on the content, rate the following review from 1.000 to 5.000 as a decimal value."},
+        {"role": "system", "content": "Classify, ignoring the existing star 'rating', the numerical rating of the following review as an decimal value with 3 decimal places from 1.000 to 5.000 from the user input where 1.000 is very negative and 5.000 is very positive. The response must be in the range of 1.000 to 5.000 inclusive. And follow the rules - No additonal information is required. Do not consider the existing rating provided. Do not add any empty space before or after the response. Do not add any punctuation marks. Do not add any specical characters. Do not add any extra words. Do not add any extra characters. Do not add any extra spaces. Do not add any extra lines. Do not add any extra paragraphs. Do not add any extra sentences. Do not add any extra symbols. Do not add any extra numbers. Do not add any extra letters. Do not add any extra digits. Do not add any extra alphabets. Do not add any extra digits. Do not take into account the 'rating' key"},
         {"role": "user", "content": user_input}
     ]
     return messages
@@ -72,7 +72,7 @@ def text_rating_promt(user_input):
 # Function to generate the topic prompt
 def topic_promt(user_input):
     messages = [
-        {"role": "system", "content": "Classify the topic of the user input. Strictly choose one of the topics from the list: 'in-person shopping', 'delivery experience', 'customer service', 'price', 'product defects and quality'."},
+        {"role": "system", "content": "Classify the topic of the user input. Strickly choose on of the topic from the list based on your detailed context matching. The response must be only one of the following: 'onboarding and setup' ( based on How good is the info to help me get set up? and How easy is it to set up my account?), 'experience' ( based on How easy is it to use? Are the support materials good? Can I get help easily?). And follow the rules - No additonal information is required. Do not add any empty space before or after the response. Do not add any punctuation marks. Do not add any specical characters. Do not add any extra words. Do not add any extra characters. Do not add any extra spaces. Do not add any extra lines. Do not add any extra paragraphs. Do not add any extra sentences. Do not add any extra symbols. Do not add any extra numbers. Do not add any extra letters. Do not add any extra digits. Do not add any extra alphabets. Do not add any extra digits"},
         {"role": "user", "content": user_input}
     ]
     return messages
